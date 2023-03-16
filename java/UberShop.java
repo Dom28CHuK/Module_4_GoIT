@@ -117,19 +117,33 @@ public class UberShop {
     }
 
     public String[] mergeStocks(String[] showcaseStocks, String[] warehouseStocks) {
-        int showcaseLength = showcaseStocks.length;
-        int werehouseLength = warehouseStocks.length;
+//        int showcaseLength = showcaseStocks.length;
+//        int werehouseLength = warehouseStocks.length;
+//
+//        String[] mergeStocks = new String[showcaseLength + werehouseLength];
+//
+//        for (int i = 0; i < showcaseLength; i++) {
+//            mergeStocks[i] = showcaseStocks[i];
+//        }
+//
+//        for (int i = 0; i < werehouseLength; i++) {
+//            mergeStocks[showcaseLength + i] = warehouseStocks[i];
+//        }
+//        return mergeStocks;
+// --------------------------------------------------------------
+        String[] result = new String[showcaseStocks.length + warehouseStocks.length];
 
-        String[] mergeStocks = new String[showcaseLength + werehouseLength];
-
-        for (int i = 0; i < showcaseLength; i++) {
-            mergeStocks[i] = showcaseStocks[i];
+        int index = 0;
+        for (String stock: showcaseStocks) {
+            result[index] = stock;
+            index++;
         }
 
-        for (int i = 0; i < werehouseLength; i++) {
-            mergeStocks[showcaseLength + i] = warehouseStocks[i];
+        for (String stock: warehouseStocks) {
+            result[index] = stock;
+            index++;
         }
-        return mergeStocks;
+        return result;
     }
     public static void main(String[] args) {
         UberShop shop = new UberShop();
