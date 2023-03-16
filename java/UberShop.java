@@ -96,11 +96,47 @@ public class UberShop {
         }
         return result;
     }
+
+    public int[] leavePrice9(int[] prices) {
+        int count = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] % 10 == 9) {
+                count++;
+            }
+        }
+
+        int[] result = new int[count];
+        int j = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] % 10 == 9) {
+                result[j] = prices[i];
+                j++;
+            }
+        }
+        return result;
+    }
+
+    public String[] mergeStocks(String[] showcaseStocks, String[] warehouseStocks) {
+        int showcaseLength = showcaseStocks.length;
+        int werehouseLength = warehouseStocks.length;
+
+        String[] mergeStocks = new String[showcaseLength + werehouseLength];
+
+        for (int i = 0; i < showcaseLength; i++) {
+            mergeStocks[i] = showcaseStocks[i];
+        }
+
+        for (int i = 0; i < werehouseLength; i++) {
+            mergeStocks[showcaseLength + i] = warehouseStocks[i];
+        }
+        return mergeStocks;
+    }
     public static void main(String[] args) {
         UberShop shop = new UberShop();
 
-        int[] prices = new int[]{150, 100, 200};
-        int toRemove = 100;
-        System.out.println(Arrays.toString(shop.removePrice(prices, toRemove)));
+        //Final result should be ["gun", "firebow", "firegun"]
+        String[] showcaseStocks = new String[] {};
+        String[] warehouseStocks = new String[] {};
+        System.out.println(Arrays.toString(shop.mergeStocks(showcaseStocks, warehouseStocks)));
     }
 }
