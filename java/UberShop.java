@@ -145,12 +145,22 @@ public class UberShop {
         }
         return result;
     }
+
+    public int getPricesSum(int[] prices, int minPrice, int maxPrice) {
+
+        int sum = 0;
+
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] >= minPrice && prices[i] <= maxPrice) {
+                sum += prices[i];
+            }
+        }
+        return sum;
+    }
     public static void main(String[] args) {
         UberShop shop = new UberShop();
 
-        //Final result should be ["gun", "firebow", "firegun"]
-        String[] showcaseStocks = new String[] {};
-        String[] warehouseStocks = new String[] {};
-        System.out.println(Arrays.toString(shop.mergeStocks(showcaseStocks, warehouseStocks)));
+        int[] prices = new int[] {10, 20, 50, 40, 34, 500};
+        System.out.println(shop.getPricesSum(prices, 20, 50));
     }
 }
