@@ -58,11 +58,49 @@ public class UberShop {
 //        }
 //        return result;
     }
+
+    public int getMinPriceCount(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        int minPrice = prices[0];
+        int minPriceCount = 1;
+
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+                minPriceCount = 1;
+            } else if (prices[i] == minPrice) {
+                minPriceCount++;
+            }
+        }
+        return minPriceCount;
+    }
+
+    public int[] removePrice(int[] prices, int toRemove) {
+        int countToRemove = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] == toRemove) {
+                countToRemove++;
+            }
+        }
+        int[] result = new int[prices.length - countToRemove];
+
+        int j = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] != toRemove) {
+                result[j] = prices[i];
+                j++;
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) {
         UberShop shop = new UberShop();
 
-        int[] prices = new int[] {};
-        int[] minMax = shop.findMinMaxPrices(prices);
-        System.out.println(Arrays.toString(minMax));
+        int[] prices = new int[]{150, 100, 200};
+        int toRemove = 100;
+        System.out.println(Arrays.toString(shop.removePrice(prices, toRemove)));
     }
 }
