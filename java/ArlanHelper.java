@@ -31,12 +31,24 @@ public class ArlanHelper {
         }
         return result;
     }
+
+    public String drawLine(int length) {
+        String result = "";
+        int i = 0;
+        while (i < length) {
+            if(i % 2 == 0) {
+                result += "*";
+            } else {
+                result += "#";
+            }
+            i++;
+        }
+        return result;
+    }
     public static void main(String[] args) {
         ArlanHelper helper = new ArlanHelper();
         //Should be:
-        //XX
-        //XX
-        //XX
-        System.out.println(helper.drawRect(2, 3, 'X'));
+        //*#*#*
+        System.out.println(helper.drawLine(5));
     }
 }
