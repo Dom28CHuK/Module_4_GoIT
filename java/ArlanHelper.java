@@ -45,10 +45,22 @@ public class ArlanHelper {
         }
         return result;
     }
+
+    public String drawPattern(char[] pattern, int repeatCount) {
+        String result = "";
+        int i = 0;
+
+        while (i < pattern.length * repeatCount) {
+            char c = pattern[i % pattern.length];
+            result += c;
+            i++;
+        }
+        return result;
+    }
     public static void main(String[] args) {
         ArlanHelper helper = new ArlanHelper();
         //Should be:
-        //*#*#*
-        System.out.println(helper.drawLine(5));
+        //JavaJavaJavaJava
+        System.out.println(helper.drawPattern(new char[] {'J', 'a', 'v', 'a'}, 3));
     }
 }
