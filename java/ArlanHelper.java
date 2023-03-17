@@ -16,6 +16,21 @@ public class ArlanHelper {
         }
         return result;
     }
+
+    public String drawRect(int width, int height, char c) {
+        String result = "";
+        int row = height;
+        while (row > 0) {
+            int column = width;
+            while (column > 0) {
+                result += c;
+                column--;
+            }
+            result += "\n";
+            row--;
+        }
+        return result;
+    }
     public static void main(String[] args) {
         ArlanHelper helper = new ArlanHelper();
         //Should be:
