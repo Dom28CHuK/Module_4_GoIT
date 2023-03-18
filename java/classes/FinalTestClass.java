@@ -50,4 +50,23 @@ public class FinalTestClass {
         }
         return minMaxPrices;
     }
+
+    public int getMinPriceCount(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        int count = 0;
+        int minPrice = prices[0];
+
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+                count = 1;
+            } else if (prices[i] == minPrice) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
