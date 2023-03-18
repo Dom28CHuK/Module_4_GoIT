@@ -69,4 +69,17 @@ public class FinalTestClass {
         }
         return count;
     }
+
+    public int[] removePrice(int[] prices, int toRemove) {
+
+        int[] newPrices = new int[prices.length - 1];
+        int j = 0;
+
+        for (int i = 0; i < prices.length; i++) {
+            if (i != toRemove) {
+                newPrices[j++] = prices[i];
+            }
+        }
+        return newPrices;
+    }
 }
