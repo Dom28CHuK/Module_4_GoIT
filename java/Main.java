@@ -19,9 +19,14 @@ public class Main {
 //        //Should be 100 jup. 23.5 jup. 400 jup. - one price per line
 //        float[] prices = new float[] {100f, 23.5f, 400f};
 //        shop.printPrices(prices);
-        float[] prices = new float[] {100f, 1500f};
-        shop.multiplyPrices(prices);
-        System.out.println(Arrays.toString(prices));
+
+//        float[] prices = new float[] {100f, 1500f};
+//        shop.multiplyPrices(prices);
+//        System.out.println(Arrays.toString(prices));
+
+        int[] prices = new int[] {100, 1500, 300, 50, 1501, 49, 30, 28};
+        int[] minMax = shop.findMinMaxPrices(prices);
+        System.out.println(Arrays.toString(minMax));
 
 
     }

@@ -18,4 +18,36 @@ public class FinalTestClass {
             }
         }
     }
+
+    public int[] findMinMaxPrices(int[] prices) {
+
+        if (prices.length == 0) {
+            return new int[] {};
+        }
+
+        int maxPrice = prices[0];
+        int minPrice = prices[0];
+
+        int[] minMaxPrices = new int[2];
+
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] > maxPrice) {
+                maxPrice = prices[i];
+            }
+        }
+
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            }
+        }
+        if (maxPrice == minPrice) {
+            int[] oneElement = {maxPrice};
+            return oneElement;
+        } else {
+            minMaxPrices[0] = minPrice;
+            minMaxPrices[1] = maxPrice;
+        }
+        return minMaxPrices;
+    }
 }
