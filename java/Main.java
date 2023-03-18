@@ -24,9 +24,12 @@ public class Main {
 //        shop.multiplyPrices(prices);
 //        System.out.println(Arrays.toString(prices));
 
-        int[] prices = new int[] {100, 1500, 300, 50, 1501, 49, 30, 28};
-        int[] minMax = shop.findMinMaxPrices(prices);
-        System.out.println(Arrays.toString(minMax));
+//        int[] prices = new int[] {100, 1500, 300, 50, 1501, 49, 30, 28};
+//        int[] minMax = shop.findMinMaxPrices(prices);
+//        System.out.println(Arrays.toString(minMax));
+
+        int[] prices = new int[] {100, 1500, 300, 50, 10, 10, 10, 70};
+        System.out.println(shop.getMinPriceCount(prices));
 
 
     }
