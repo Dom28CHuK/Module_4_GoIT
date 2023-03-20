@@ -28,8 +28,12 @@ public class Main {
 //        int[] minMax = shop.findMinMaxPrices(prices);
 //        System.out.println(Arrays.toString(minMax));
 
-        int[] prices = new int[] {100, 1500, 300, 50, 10, 10, 10, 70};
-        System.out.println(shop.getMinPriceCount(prices));
+//        int[] prices = new int[] {100, 1500, 300, 50, 10, 10, 10, 70};
+//        System.out.println(shop.getMinPriceCount(prices));
+
+        int[] prices = new int[]{150, 100, 200, 300};
+        int toRemove = 100;
+        System.out.println(Arrays.toString(shop.removePrice(prices, toRemove)));
 
 
     }
