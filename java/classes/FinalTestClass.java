@@ -88,4 +88,41 @@ public class FinalTestClass {
         }
         return result;
     }
+
+    public int[] leavePrice9(int[] prices) {
+        int validPriceCount = 0;
+        for(int price: prices) {
+            if (price%10 == 9) {
+                validPriceCount++;
+            }
+        }
+
+        int[] result = new int[validPriceCount];
+        int index = 0;
+        for(int price: prices) {
+            if (price%10 == 9) {
+                result[index] = price;
+                index++;
+            }
+        }
+
+        return result;
+    }
+
+    public String[] mergeStocks(String[] showcaseStocks, String[] warehouseStocks) {
+
+        int arraysOne = showcaseStocks.length;
+        int arraysTwo = warehouseStocks.length;
+
+        String[] mergeArrays = new String[arraysOne + arraysTwo];
+
+        for (int i = 0; i < arraysOne; i++) {
+            mergeArrays[i] = showcaseStocks[i];
+        }
+
+        for (int i = 0; i < arraysTwo; i++) {
+            mergeArrays[arraysOne + i] = warehouseStocks[i];
+        }
+        return mergeArrays;
+    }
 }
