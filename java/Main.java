@@ -31,9 +31,13 @@ public class Main {
 //        int[] prices = new int[] {100, 1500, 300, 50, 10, 10, 10, 70};
 //        System.out.println(shop.getMinPriceCount(prices));
 
-        int[] prices = new int[]{150, 100, 200, 300};
-        int toRemove = 100;
-        System.out.println(Arrays.toString(shop.removePrice(prices, toRemove)));
+//        int[] prices = new int[]{150, 100, 200, 300};
+//        int toRemove = 100;
+//        System.out.println(Arrays.toString(shop.removePrice(prices, toRemove)));
+
+        String[] showcaseStocks = new String[] {"gun", "firebow"};
+        String[] warehouseStocks = new String[] {"firegun", "pidar"};
+        System.out.println(Arrays.toString(shop.mergeStocks(showcaseStocks, warehouseStocks)));
 
 
     }
