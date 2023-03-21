@@ -110,19 +110,19 @@ public class FinalTestClass {
     }
 
     public String[] mergeStocks(String[] showcaseStocks, String[] warehouseStocks) {
+        int firstArray = showcaseStocks.length;
+        int secondArray = warehouseStocks.length;
 
-        int arraysOne = showcaseStocks.length;
-        int arraysTwo = warehouseStocks.length;
+        String[] mergeArray = new String[firstArray + secondArray];
 
-        String[] mergeArrays = new String[arraysOne + arraysTwo];
-
-        for (int i = 0; i < arraysOne; i++) {
-            mergeArrays[i] = showcaseStocks[i];
+        for (int i = 0; i < firstArray; i++) {
+            mergeArray[i] = showcaseStocks[i];
         }
 
-        for (int i = 0; i < arraysTwo; i++) {
-            mergeArrays[arraysOne + i] = warehouseStocks[i];
+        for (int i = 0; i < secondArray; i++) {
+            mergeArray[firstArray + i] = warehouseStocks[i];
         }
-        return mergeArrays;
+
+        return mergeArray;
     }
 }
