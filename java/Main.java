@@ -7,7 +7,7 @@ public class Main {
         ForPractice forPractice = new ForPractice();
 
 //        System.out.println(forPractice.evenNumbers(100));
-        System.out.println(forPractice.fibonacciNumbers(new int[]{1, 1, 2, 3, 5, 8, 13, 21, 34, 55}));
+        forPractice.multiplicationTable();
 
 
 
