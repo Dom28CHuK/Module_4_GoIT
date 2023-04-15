@@ -10,11 +10,12 @@ public class ForPractice {
         return number;
     }
 
-    public int fibonacciNumbers(int[] number) {
-        int[] result;
-        for (int i = 0; i < number.length; i++) {
-            number[i]
+    public void multiplicationTable() {
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 1; j <= 10; j++) {
+                System.out.print(i * j + "\t");
+            }
+            System.out.println();
         }
-
     }
 }
